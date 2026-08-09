@@ -12,13 +12,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --ink:#10202c;
   --ink-2:#1b3345;
-  --ink-soft:#48606f;
+  --ink-soft:#3b525f;
   --paper:#f2f4f6;
   --card:#ffffff;
   --rule:#d3dbe1;
@@ -37,7 +37,7 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--body);font-size:1.0625rem;line-height:1.62;
+  font-family:var(--body);font-size:1.15rem;font-weight:400;line-height:1.68;
   -webkit-font-smoothing:antialiased;
 }
 a{color:inherit}
@@ -61,11 +61,11 @@ a{color:inherit}
 }
 .rail-role{
   font-family:var(--mono);font-size:.71rem;letter-spacing:.11em;
-  text-transform:uppercase;color:var(--brass-soft);margin:.65rem 0 0;line-height:1.6;
+  text-transform:uppercase;color:var(--brass-soft);margin:.65rem 0 0;line-height:1.65;font-weight:500;
 }
 .rail-creds{
   font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;
-  color:#8fa6b4;margin:.85rem 0 0;
+  color:#a4bac6;margin:.85rem 0 0;font-weight:500;
   display:flex;flex-wrap:wrap;gap:.32rem .4rem;
 }
 .rail-creds span{
@@ -73,8 +73,8 @@ a{color:inherit}
 }
 .rail-nav{display:flex;flex-direction:column;gap:.1rem;margin-top:auto}
 .rail-nav a{
-  font-family:var(--mono);font-size:.79rem;letter-spacing:.05em;
-  text-decoration:none;color:#9fb3c0;padding:.44rem 0;
+  font-family:var(--mono);font-size:.84rem;font-weight:500;letter-spacing:.04em;
+  text-decoration:none;color:#b3c5d0;padding:.46rem 0;
   display:flex;align-items:baseline;gap:.75rem;transition:color .18s;
 }
 .rail-nav a i{font-style:normal;opacity:.45;font-size:.68rem}
@@ -88,33 +88,46 @@ a{color:inherit}
 .rail-foot a:hover{color:var(--brass-soft)}
 
 /* ---------- MAIN ---------- */
-.main{margin-left:var(--rail);padding:0 var(--pad) 6rem;max-width:1500px}
-section{padding:5.5rem 0 1rem;border-top:1px solid var(--rule)}
+.main{margin-left:var(--rail);padding:0 var(--pad) 3.5rem;max-width:1500px}
+section{padding:3.25rem 0 .75rem;border-top:1px solid var(--rule)}
 section:first-of-type{border-top:0}
 
 .eyebrow{
-  font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--brass);margin:0 0 1.5rem;
+  font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--brass);margin:0 0 1rem;
 }
 h2{
   font-family:var(--display);font-weight:600;font-size:clamp(1.55rem,2.6vw,2.15rem);
-  letter-spacing:-.025em;margin:0 0 .8rem;
+  letter-spacing:-.025em;margin:0 0 .65rem;
 }
-.lede{max-width:66ch;color:var(--ink-soft);margin:0 0 2.75rem;font-size:1.06rem}
+.lede{max-width:66ch;color:var(--ink-soft);margin:0 0 1.85rem;font-size:1.14rem;font-weight:400}
 
 /* ---------- HERO ---------- */
-.hero{padding-top:clamp(3.5rem,9vh,6.5rem)}
+.hero{padding-top:clamp(2.5rem,6vh,4.5rem);padding-bottom:1.5rem}
+.hero-top{display:grid;gap:2rem 4rem;align-items:start}
+@media(min-width:1080px){
+  .hero-top{grid-template-columns:minmax(0,1fr) 400px}
+}
+.hero-portrait{
+  width:100%;max-width:400px;aspect-ratio:3/4;object-fit:cover;object-position:center 18%;
+  display:block;border-radius:4px;background:var(--rule);
+  border:1px solid var(--rule);
+}
+.portrait-cap{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-soft);margin:.85rem 0 0;
+}
 .hero h1{
   font-family:var(--display);font-weight:400;
   font-size:clamp(2rem,4vw,3.3rem);line-height:1.13;
   letter-spacing:-.032em;margin:0;max-width:24ch;
 }
 .hero h1 em{font-style:normal;color:var(--brass);font-weight:600}
-.hero-sub{max-width:64ch;color:var(--ink-soft);margin:1.6rem 0 0;font-size:1.13rem}
+.hero-sub{max-width:64ch;color:var(--ink-soft);margin:1.6rem 0 0;font-size:1.22rem;font-weight:400;line-height:1.6}
 .hero-links{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:2.1rem}
 .btn{
-  font-family:var(--mono);font-size:.77rem;letter-spacing:.03em;
-  text-decoration:none;padding:.6rem 1.05rem;border:1px solid var(--ink);
+  font-family:var(--mono);font-size:.82rem;font-weight:500;letter-spacing:.02em;
+  text-decoration:none;padding:.66rem 1.15rem;border:1px solid var(--ink);
   border-radius:999px;transition:background .18s,color .18s,border-color .18s;
 }
 .btn:hover{background:var(--ink);color:#fff}
@@ -124,16 +137,16 @@ h2{
 /* ---------- VERIFIED FIGURES ---------- */
 .figs{
   display:grid;gap:1px;background:var(--rule);
-  border:1px solid var(--rule);margin-top:3.5rem;
+  border:1px solid var(--rule);margin-top:2.5rem;
 }
 @media(min-width:760px){.figs{grid-template-columns:repeat(4,1fr)}}
 .fig{background:var(--card);padding:1.5rem 1.4rem}
 .fig b{
   display:block;font-family:var(--display);font-weight:500;
-  font-size:1.85rem;letter-spacing:-.03em;line-height:1;color:var(--ink);
+  font-size:2rem;font-weight:600;letter-spacing:-.03em;line-height:1;color:var(--ink);
 }
 .fig span{
-  display:block;margin-top:.6rem;font-size:.92rem;color:var(--ink-soft);line-height:1.45;
+  display:block;margin-top:.6rem;font-size:1.02rem;color:var(--ink-soft);line-height:1.5;
 }
 .figs-note{
   font-family:var(--mono);font-size:.68rem;color:var(--ink-soft);
@@ -142,38 +155,39 @@ h2{
 
 /* ---------- EXPERIENCE ---------- */
 .role{
-  display:grid;gap:.4rem 3rem;padding:2.1rem 0;border-top:1px solid var(--rule);
+  display:grid;gap:.4rem 3rem;padding:1.6rem 0;border-top:1px solid var(--rule);
 }
 @media(min-width:900px){.role{grid-template-columns:13rem 1fr}}
-.role-when{font-family:var(--mono);font-size:.76rem;color:var(--brass);padding-top:.35rem}
-.role-where{display:block;color:var(--ink-soft);margin-top:.35rem;letter-spacing:.02em}
+.role-when{font-family:var(--mono);font-size:.8rem;font-weight:500;color:var(--brass);padding-top:.4rem}
+.role-where{display:block;color:var(--ink-soft);margin-top:.35rem;font-size:1rem;font-weight:500;letter-spacing:.01em}
 .role h3{
-  font-family:var(--display);font-weight:600;font-size:1.2rem;
+  font-family:var(--display);font-weight:600;font-size:1.3rem;
   letter-spacing:-.015em;margin:0 0 .7rem;
 }
 .role ul{margin:0;padding-left:1.1rem;max-width:78ch}
-.role li{margin-bottom:.5rem;color:var(--ink-soft)}
+.role li{margin-bottom:.62rem;color:var(--ink-soft);font-size:1.09rem;line-height:1.62}
 .role li::marker{color:var(--brass)}
 .role li b{color:var(--ink);font-weight:600}
+.role li::marker{font-size:1.1em}
 
 /* ---------- CAPABILITY COLUMNS ---------- */
 .cols{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
 @media(min-width:900px){.cols{grid-template-columns:repeat(3,1fr)}}
 .col{background:var(--card);padding:1.9rem 1.7rem}
 .col h3{
-  font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
   color:var(--brass);margin:0 0 1.1rem;font-weight:500;
 }
 .col ul{margin:0;padding:0;list-style:none}
 .col li{
-  padding:.42rem 0;border-bottom:1px solid var(--rule);
-  font-size:.97rem;color:var(--ink-soft);
+  padding:.5rem 0;border-bottom:1px solid var(--rule);
+  font-size:1.04rem;line-height:1.5;color:var(--ink-soft);
 }
 .col li:last-child{border-bottom:0}
 .col li b{color:var(--ink);font-weight:600}
 
 /* ---------- PUBLICATIONS ---------- */
-.plot-wrap{position:relative;margin:0 0 2.75rem}
+.plot-wrap{position:relative;margin:0 0 1.9rem}
 .plot-cap{
   font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
   color:var(--ink-soft);text-transform:uppercase;margin:0 0 .9rem;
@@ -192,9 +206,9 @@ h2{
 
 .filters{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
 .chip{
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;
+  font-family:var(--mono);font-size:.77rem;font-weight:500;letter-spacing:.03em;
   background:none;border:1px solid var(--rule);border-radius:999px;
-  padding:.38rem .85rem;cursor:pointer;color:var(--ink-soft);transition:.16s;
+  padding:.42rem .9rem;cursor:pointer;color:var(--ink-soft);transition:.16s;
 }
 .chip:hover{border-color:var(--ink)}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -205,11 +219,11 @@ h2{
 }
 @media(min-width:760px){.pub{grid-template-columns:6rem 1fr}}
 .pub.flash{background:#fff8e6}
-.pub-yr{font-family:var(--mono);font-size:.82rem;color:var(--brass);padding-top:.2rem}
-.pub-title{font-size:1.06rem;font-weight:500;margin:0 0 .3rem;line-height:1.42;max-width:82ch}
-.pub-authors{color:var(--ink-soft);font-size:.94rem;margin:0}
+.pub-yr{font-family:var(--mono);font-size:.87rem;font-weight:500;color:var(--brass);padding-top:.28rem}
+.pub-title{font-size:1.14rem;font-weight:600;margin:0 0 .35rem;line-height:1.45;max-width:82ch}
+.pub-authors{color:var(--ink-soft);font-size:1.02rem;margin:0}
 .pub-authors b{font-weight:600;color:var(--ink)}
-.pub-venue{font-style:italic;color:var(--ink-soft);font-size:.94rem;margin:.15rem 0 0}
+.pub-venue{font-style:italic;color:var(--ink-soft);font-size:1.02rem;margin:.15rem 0 0}
 .pub-meta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.5rem}
 .pub-meta a{
   font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;
@@ -223,9 +237,9 @@ h2{
 .field{border-top:1px solid var(--rule);padding-top:.9rem}
 .field dt{
   font-family:var(--mono);font-size:.67rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink-soft);margin:0 0 .3rem;
+  text-transform:uppercase;color:var(--ink-soft);margin:0 0 .35rem;font-weight:500;
 }
-.field dd{margin:0;font-size:1.01rem;word-break:break-word}
+.field dd{margin:0;font-size:1.08rem;font-weight:500;word-break:break-word}
 .field dd a{text-decoration:none;border-bottom:1px solid var(--brass-soft)}
 .field dd a:hover{color:var(--brass)}
 
@@ -249,8 +263,8 @@ footer{
   .rail-nav a i{display:none}
   .rail-foot{display:none}
   .main,footer{margin-left:0}
-  .hero{padding-top:3rem}
-  section{padding-top:3.75rem}
+  .hero{padding-top:2rem}
+  section{padding-top:2.5rem}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -282,9 +296,17 @@ footer{
 <main class="main">
 
   <section class="hero" id="top">
-    <h1 id="heroLine"></h1>
-    <p class="hero-sub" id="heroSub"></p>
-    <div class="hero-links" id="heroLinks"></div>
+    <div class="hero-top">
+      <div>
+        <h1 id="heroLine"></h1>
+        <p class="hero-sub" id="heroSub"></p>
+        <div class="hero-links" id="heroLinks"></div>
+      </div>
+      <figure style="margin:0">
+        <img class="hero-portrait" id="heroPortrait" alt="" width="400" height="533">
+        <figcaption class="portrait-cap" id="portraitCap"></figcaption>
+      </figure>
+    </div>
     <div class="figs" id="figs"></div>
     <p class="figs-note" id="figsNote"></p>
   </section>
@@ -338,10 +360,14 @@ const SITE = {
      1. upload the image to this repo (Add file → Upload files)
      2. change the line below to its filename, e.g. "reza.jpg"
      Square crop around 500×500px works best.                        */
-  photo: "https://github.com/rez-babaei.png",
+  photo: "reza-square.jpg",
+
+  /* Large portrait beside the headline. Set to "" to hide it. */
+  portrait: "reza.jpg",
+  portraitCaption: "Reza Babaei, P.Eng. · Toronto",
 
   name:  "Reza Babaei",
-  role:  "Energy Engineer · BGIS\nHVAC & decarbonization · Greater Toronto Area",
+  role:  "Energy Engineer · BGIS\nTELUS portfolio\nHVAC & decarbonization · Greater Toronto Area",
   creds: ["P.Eng.", "MASc", "CEM", "CMVP", "LEED GA"],
 
   footNote: 'Built and maintained by me.<br>Last updated August 2026.',
@@ -351,10 +377,10 @@ const SITE = {
   heroSub: "Licensed professional engineer at BGIS, working across the TELUS national portfolio. HVAC retrofits, building automation optimization and electrification pathways for commercial, healthcare, municipal and school-board buildings — backed by IPMVP measurement and verification, so projected savings and delivered savings end up being the same number.",
 
   links: [
-    { label: "Download CV",    url: "cv.pdf", solid: true },
-    { label: "Email me",       url: "mailto:rez.babaeii@gmail.com" },
-    { label: "LinkedIn",       url: "https://www.linkedin.com/in/rezbabaei/" },
-    { label: "Google Scholar", url: "https://scholar.google.com/citations?user=Z_5roncAAAAJ&hl=en" }
+    { label: "ResearchGate",   url: "https://www.researchgate.net/profile/Reza-Babaei-13", solid: true },
+    { label: "Email me",       url: "mailto:babaeij@uwindsor.ca", solid: true },
+    { label: "LinkedIn",       url: "https://www.linkedin.com/in/rezbabaei/", solid: true },
+    { label: "Google Scholar", url: "https://scholar.google.com/citations?user=Z_5roncAAAAJ&hl=en", solid: true }
   ],
 
   /* Headline numbers — all from delivered projects */
@@ -441,9 +467,40 @@ const SITE = {
     ]}
   ],
 
-  pubLede: "Sixteen peer-reviewed papers and chapters, most with the Turbulence & Energy Laboratory at the University of Windsor, on sizing and optimizing hybrid renewable systems for places the grid serves poorly.",
+  pubLede: "Twenty-one papers, chapters and working papers, most with the Turbulence & Energy Laboratory at the University of Windsor, on sizing and optimizing hybrid renewable systems for places the grid serves poorly.",
 
   publications: [
+    /* ↓ CHECK THE YEARS on these five — Scholar didn't list them */
+    { year:2026, type:"Preprint",
+      title:"Small modular reactor integration for sustainable greenhouse energy: a case study of Sun Parlour Complex",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"SSRN working paper 6993641",
+      doi:"" },
+
+    { year:2026, type:"Preprint",
+      title:"Verified energy efficiency and renewable microgrid planning for remote educational infrastructure: a Pelee Island case study",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"SSRN working paper 6803635",
+      doi:"" },
+
+    { year:2026, type:"Journal",
+      title:"A comprehensive approach to renewable microgrid planning: energy modeling, optimization, and verified efficiency measures",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"Franklin Open",
+      doi:"" },
+
+    { year:2025, type:"Preprint",
+      title:"Integrating energy modeling and decision-making for optimizing sustainable off-grid education via hybrid systems",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"SSRN working paper 5144493",
+      doi:"" },
+
+    { year:2025, type:"Journal",
+      title:"Sustainable energy solutions for rural electrification in a low-income community",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"— add journal, volume and pages —",
+      doi:"" },
+
     { year:2026, type:"Book chapter",
       title:"Energy and emission implications of battery-electric container ships operating from Los Angeles Harbor",
       authors:"Babaei R., Ting D.S.-K., Carriveau R.",
@@ -504,9 +561,9 @@ const SITE = {
       venue:"Energy, 282, 128785",
       doi:"https://doi.org/10.1016/j.energy.2023.128785" },
 
-    { year:2023, type:"Journal",
+    { year:2022, type:"Journal",
       title:"Techno-economic analysis of solar tracker-based hybrid energy systems in a rural residential building: a case study in South Africa",
-      authors:"Liu Z., Babaei R.",
+      authors:"Xiaojing L., Tan Q., Niu Y., Babaei R.",
       venue:"International Journal of Green Energy, 20(2), 192–211",
       doi:"https://doi.org/10.1080/15435075.2021.2024545" },
 
@@ -546,8 +603,7 @@ const SITE = {
   contactLede: "Open to conversations about retrofit strategy, M&V, and decarbonization roadmaps.",
 
   contact: [
-    { label:"Email",    value:"rez.babaeii@gmail.com", href:"mailto:rez.babaeii@gmail.com" },
-    { label:"Phone",    value:"+1 (365) 994-8707",     href:"tel:+13659948707" },
+    { label:"Email",    value:"babaeij@uwindsor.ca", href:"mailto:babaeij@uwindsor.ca" },
     { label:"Based in", value:"Greater Toronto Area, Ontario, Canada" },
     { label:"LinkedIn", value:"linkedin.com/in/rezbabaei", href:"https://www.linkedin.com/in/rezbabaei/" },
     { label:"Scholar",  value:"Publications and citations", href:"https://scholar.google.com/citations?user=Z_5roncAAAAJ&hl=en" },
@@ -566,6 +622,11 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':
 const ph = $('#railPhoto');
 if (SITE.photo) { ph.src = SITE.photo; ph.alt = SITE.name; ph.onerror = () => ph.remove(); }
 else ph.remove();
+
+const pt = $('#heroPortrait');
+if (SITE.portrait) { pt.src = SITE.portrait; pt.alt = SITE.name; pt.onerror = () => pt.closest('figure').remove(); }
+else pt.closest('figure').remove();
+$('#portraitCap').textContent = SITE.portraitCaption || '';
 
 $('#railName').textContent = SITE.name;
 $('#railRole').innerHTML   = esc(SITE.role).replace(/\n/g, '<br>');
