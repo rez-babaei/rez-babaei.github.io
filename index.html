@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Reza Babaei — Energy Systems Researcher</title>
+<meta name="description" content="Reza Babaei — energy engineer and researcher working on renewable energy systems, green hydrogen, and decarbonized transport. Publications, research areas, and contact.">
+<meta property="og:title" content="Reza Babaei — Energy Systems Researcher">
+<meta property="og:description" content="Techno-economic optimization of hybrid renewable energy systems for islands, remote communities, and shipping.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#10202c;
+  --ink-2:#1b3345;
+  --ink-soft:#48606f;
+  --paper:#f2f4f6;
+  --card:#ffffff;
+  --rule:#d3dbe1;
+  --brass:#a9812b;
+  --brass-soft:#e8d9ae;
+
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Newsreader",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --rail:270px;
+  --pad:clamp(1.25rem,4vw,3.5rem);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:1.0625rem;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
+
+/* ---------- LEFT RAIL ---------- */
+.rail{
+  position:fixed;inset:0 auto 0 0;width:var(--rail);
+  background:var(--ink);color:#e7edf1;
+  padding:2.75rem 1.75rem;display:flex;flex-direction:column;gap:2rem;z-index:20;
+}
+.rail-name{
+  font-family:var(--display);font-weight:800;font-size:1.5rem;
+  line-height:1.1;letter-spacing:-.02em;margin:0;
+}
+.rail-role{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--brass-soft);margin:.6rem 0 0;
+}
+.rail-creds{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;
+  color:#8fa6b4;margin:.75rem 0 0;line-height:1.7;
+  display:flex;flex-wrap:wrap;gap:.3rem .55rem;
+}
+.rail-creds span{
+  border:1px solid #2c4356;border-radius:3px;padding:.1rem .38rem;white-space:nowrap;
+}
+.rail-nav{display:flex;flex-direction:column;gap:.15rem;margin-top:auto}
+.rail-nav a{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;
+  text-decoration:none;color:#9fb3c0;padding:.42rem 0;
+  display:flex;align-items:baseline;gap:.7rem;transition:color .18s;
+}
+.rail-nav a span{opacity:.5;font-size:.68rem}
+.rail-nav a:hover,.rail-nav a.is-active{color:#fff}
+.rail-nav a.is-active span{opacity:1;color:var(--brass)}
+.rail-foot{font-family:var(--mono);font-size:.68rem;color:#5f7a8b;line-height:1.5}
+
+/* ---------- MAIN ---------- */
+.main{margin-left:var(--rail);padding:0 var(--pad) 6rem;max-width:1180px}
+section{padding:5rem 0 1rem;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+
+.eyebrow{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brass);margin:0 0 1.6rem;
+}
+h2{
+  font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3vw,2rem);
+  letter-spacing:-.02em;margin:0 0 1.75rem;
+}
+
+/* ---------- HERO ---------- */
+.hero{padding-top:clamp(4rem,10vh,7.5rem)}
+.hero h1{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.14;
+  letter-spacing:-.03em;margin:0;max-width:22ch;
+}
+.hero h1 em{font-style:normal;color:var(--brass);font-weight:600}
+.hero-sub{max-width:56ch;color:var(--ink-soft);margin:1.5rem 0 0;font-size:1.15rem}
+.hero-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.btn{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;
+  text-decoration:none;padding:.62rem 1.05rem;border:1px solid var(--ink);
+  border-radius:999px;transition:background .18s,color .18s;
+}
+.btn:hover{background:var(--ink);color:#fff}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover{background:var(--brass);border-color:var(--brass)}
+
+/* ---------- SIGNATURE: publication dot-plot ---------- */
+.plot-wrap{margin-top:3.5rem;position:relative}
+.plot-cap{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
+  color:var(--ink-soft);text-transform:uppercase;margin:0 0 .9rem;
+}
+#plot{width:100%;height:auto;display:block;overflow:visible}
+#plot circle{
+  fill:var(--ink);cursor:pointer;
+  transition:fill .15s,r .15s;
+}
+#plot circle:hover,#plot circle.is-lit{fill:var(--brass)}
+#plot .axis{stroke:var(--rule);stroke-width:1}
+#plot .yr{font-family:var(--mono);font-size:9px;fill:var(--ink-soft)}
+.tip{
+  position:absolute;pointer-events:none;opacity:0;transform:translate(-50%,-108%);
+  background:var(--ink);color:#fff;padding:.5rem .7rem;border-radius:6px;
+  font-size:.8rem;line-height:1.35;max-width:270px;transition:opacity .14s;z-index:5;
+}
+.tip.on{opacity:1}
+
+/* ---------- RESEARCH AREAS ---------- */
+.areas{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+@media(min-width:820px){.areas{grid-template-columns:repeat(3,1fr)}}
+.area{background:var(--card);padding:1.9rem 1.6rem}
+.area h3{
+  font-family:var(--display);font-weight:600;font-size:1.08rem;
+  margin:.9rem 0 .6rem;letter-spacing:-.01em;
+}
+.area p{margin:0;color:var(--ink-soft);font-size:.98rem}
+.area-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--brass)}
+
+/* ---------- PUBLICATIONS ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2rem}
+.chip{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;
+  background:none;border:1px solid var(--rule);border-radius:999px;
+  padding:.4rem .85rem;cursor:pointer;color:var(--ink-soft);transition:.16s;
+}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.pub{
+  display:grid;gap:.25rem 1.75rem;padding:1.4rem 0;border-top:1px solid var(--rule);
+  scroll-margin-top:2rem;transition:background .3s;
+}
+@media(min-width:720px){.pub{grid-template-columns:5.5rem 1fr}}
+.pub.flash{background:#fff8e6}
+.pub-yr{font-family:var(--mono);font-size:.82rem;color:var(--brass);padding-top:.2rem}
+.pub-title{font-size:1.08rem;font-weight:500;margin:0 0 .3rem;line-height:1.4}
+.pub-authors{color:var(--ink-soft);font-size:.95rem;margin:0}
+.pub-authors b{font-weight:600;color:var(--ink)}
+.pub-venue{font-style:italic;color:var(--ink-soft);font-size:.95rem;margin:.15rem 0 0}
+.pub-meta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.55rem}
+.pub-meta a{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;
+  color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--rule);
+}
+.pub-meta a:hover{color:var(--brass);border-color:var(--brass)}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;gap:1.4rem 3rem}
+@media(min-width:720px){.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.field{border-top:1px solid var(--rule);padding-top:.9rem}
+.field dt{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);margin:0 0 .3rem;
+}
+.field dd{margin:0;font-size:1.02rem;word-break:break-word}
+.field dd a{text-decoration:none;border-bottom:1px solid var(--brass-soft)}
+.field dd a:hover{color:var(--brass)}
+
+footer{
+  margin-left:var(--rail);padding:2rem var(--pad) 3rem;
+  font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);
+  border-top:1px solid var(--rule);
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:900px){
+  .rail{position:static;width:auto;flex-direction:row;align-items:center;
+        flex-wrap:wrap;gap:1rem;padding:1.5rem var(--pad)}
+  .rail-head{flex:1 1 100%}
+  .rail-nav{flex-direction:row;flex-wrap:wrap;gap:.25rem 1.1rem;margin-top:0}
+  .rail-nav a span{display:none}
+  .rail-creds{margin-top:.55rem}
+  .rail-foot{display:none}
+  .main,footer{margin-left:0}
+  .hero{padding-top:3rem}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<aside class="rail">
+  <div class="rail-head">
+    <p class="rail-name" id="railName"></p>
+    <p class="rail-role" id="railRole"></p>
+    <p class="rail-creds" id="railCreds"></p>
+  </div>
+  <nav class="rail-nav" id="nav">
+    <a href="#work"><span>01</span>Research</a>
+    <a href="#publications"><span>02</span>Publications</a>
+    <a href="#contact"><span>03</span>Contact</a>
+  </nav>
+  <p class="rail-foot">Last updated<br><span id="updated"></span></p>
+</aside>
+
+<main class="main">
+
+  <section class="hero" id="top">
+    <h1 id="heroLine"></h1>
+    <p class="hero-sub" id="heroSub"></p>
+    <div class="hero-links" id="heroLinks"></div>
+
+    <div class="plot-wrap">
+      <p class="plot-cap">Publication record — one dot per paper</p>
+      <svg id="plot" role="img" aria-label="Chart of publications per year"></svg>
+      <div class="tip" id="tip"></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <p class="eyebrow">01 — Research</p>
+    <h2>What I work on</h2>
+    <div class="areas" id="areas"></div>
+  </section>
+
+  <section id="publications">
+    <p class="eyebrow">02 — Publications</p>
+    <h2>Selected publications</h2>
+    <div class="filters" id="filters"></div>
+    <div id="pubList"></div>
+  </section>
+
+  <section id="contact">
+    <p class="eyebrow">03 — Contact</p>
+    <h2>Get in touch</h2>
+    <dl class="contact-grid" id="contact"></dl>
+  </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   EDIT EVERYTHING BELOW. This is the only part you need to touch.
+   ═══════════════════════════════════════════════════════════════ */
+
+const SITE = {
+  name:     "Reza Babaei",
+  role:     "Energy Engineer · Research Scientist",
+  creds:    ["P.Eng.", "MASc", "CEM", "CMVP", "LEED GA"],
+  heroLine: "I design and optimize <em>renewable energy systems</em> for islands, remote communities, and shipping fleets.",
+  heroSub:  "My work sits between techno-economic modelling and real deployment: sizing hybrid PV\u2013wind\u2013storage systems, integrating green hydrogen and desalination, and quantifying the cost of decarbonizing hard-to-electrify sectors. Turbulence & Energy Laboratory, University of Windsor \u2014 now Research Scientist at Enerlife Consulting, Toronto.",
+  updated:  "August 2026",
+
+  links: [
+    { label: "Download CV",     url: "cv.pdf",                                                  solid: true },
+    { label: "Google Scholar",  url: "https://scholar.google.com/citations?user=Z_5roncAAAAJ&hl=en" },
+    { label: "ORCID",           url: "https://orcid.org/0000-0002-2974-0307" },
+    { label: "LinkedIn",        url: "https://www.linkedin.com/in/rezbabaei/" },
+    { label: "ResearchGate",    url: "https://www.researchgate.net/profile/Reza-Babaei-13" }
+  ],
+
+  areas: [
+    { tag:"AREA 01", title:"Island & off-grid hybrid systems",
+      text:"Techno-economic sizing of PV, wind, diesel and battery configurations for communities the grid serves badly \u2014 from Pelee Island, Ontario to isolated islands in the Persian Gulf. Optimizing net present cost, cost of energy, and renewable fraction together rather than one at a time." },
+    { tag:"AREA 02", title:"Green hydrogen & multi-generation",
+      text:"Using surplus renewable generation to produce and store hydrogen, and coupling power systems with heat and desalination so a single plant delivers electricity, heating and fresh water. Case studies across Oman, Cameroon and rural Canada." },
+    { tag:"AREA 03", title:"Decarbonizing heavy transport",
+      text:"Energy and emissions modelling for battery-electric and hydrogen-powered container ships, plus data-mining approaches to finding emissions reductions hidden in maritime operating data." }
+  ],
+
+  /* Add one object per paper. "me" bolds your name in the author list. */
+  publications: [
+    { year:2026, type:"Book chapter",
+      title:"Energy and emission implications of battery-electric container ships operating from Los Angeles Harbor",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"Sustaining Tomorrow with Minimal Entropy Generation, 145\u2013170. Springer",
+      doi:"https://doi.org/10.1007/978-3-032-13357-1_6", pdf:"" },
+
+    { year:2025, type:"Journal",
+      title:"Comparative analysis of energy dispatch strategies in PV-integrated renewable energy systems",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"\u2014 add journal, volume and pages \u2014",
+      doi:"", pdf:"" },
+
+    { year:2025, type:"Journal",
+      title:"Photovoltaic tracking technologies for sustainable electrification: a techno-economic analysis on Western Pelee Island, Canada",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"Energy & Environment",
+      doi:"https://doi.org/10.1177/0958305X251315398", pdf:"" },
+
+    { year:2025, type:"Journal",
+      title:"Feasibility and optimization of hybrid energy systems for sustainable electricity, heat, and fresh water production in a rural community",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"International Journal of Green Energy, 22(10), 1991\u20132009",
+      doi:"https://doi.org/10.1080/15435075.2024.2448292", pdf:"" },
+
+    { year:2025, type:"Preprint",
+      title:"Decarbonizing maritime logistics through hydrogen-powered container ships",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"SSRN working paper",
+      doi:"https://doi.org/10.2139/ssrn.5188445", pdf:"" },
+
+    { year:2024, type:"Journal",
+      title:"A comprehensive study of optimizing renewable energy\u2013water\u2013heat integration for isolated islands in the Persian Gulf",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"Energy, 313, 133973",
+      doi:"", pdf:"" },
+
+    { year:2024, type:"Journal",
+      title:"Green hydrogen production and storage via excess energy derived from a hybrid power system under different climatic conditions: Cameroon case study",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"\u2014 add journal, volume and pages \u2014",
+      doi:"", pdf:"" },
+
+    { year:2024, type:"Journal",
+      title:"Techno-economic assessment of green hydrogen production in the unexploited landlocked north-western region of Oman to realize national sustainable strategy",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"\u2014 add journal, volume and pages \u2014",
+      doi:"", pdf:"" },
+
+    { year:2024, type:"Preprint",
+      title:"Data mining and cybersecurity-driven solutions for CO\u2082 emissions reduction of different maritime shipping: a multi-faceted analysis",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"TechRxiv",
+      doi:"https://doi.org/10.36227/techrxiv.173030522.24669178/v1", pdf:"" },
+
+    { year:2023, type:"Book chapter",
+      title:"Feasibility analysis of solar tracking technologies connected to renewable energy systems",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"Engineering to Adapt, 125\u2013156. Springer",
+      doi:"https://doi.org/10.1007/978-3-031-47237-4_7", pdf:"" },
+
+    { year:2022, type:"Journal",
+      title:"Feasibility and optimal sizing analysis of stand-alone hybrid energy systems coupled with various battery technologies: a case study of Pelee Island",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"Energy Reports, 8, 4747\u20134762",
+      doi:"https://doi.org/10.1016/j.egyr.2022.03.133", pdf:"" },
+
+    { year:2022, type:"Journal",
+      title:"Optimization of hydrogen-producing sustainable island microgrids",
+      authors:"Babaei R., Ting D.S.-K., Carriveau R.",
+      venue:"International Journal of Hydrogen Energy, 47(32), 14375\u201314392",
+      doi:"", pdf:"" }
+  ],
+
+  me: "Babaei R.",
+
+  contact: [
+    { label:"Email",        value:"add your preferred address", href:"mailto:you@uwindsor.ca" },
+    { label:"Credentials",  value:"P.Eng. (Ontario) \u00b7 MASc Mechanical Engineering \u00b7 Certified Energy Manager \u00b7 Certified Measurement & Verification Professional \u00b7 LEED Green Associate" },
+    { label:"Affiliation",  value:"Turbulence & Energy Laboratory, University of Windsor \u00b7 Enerlife Consulting Inc., Toronto" },
+    { label:"Google Scholar", value:"Publications and citations", href:"https://scholar.google.com/citations?user=Z_5roncAAAAJ&hl=en" },
+    { label:"LinkedIn",     value:"linkedin.com/in/rezbabaei", href:"https://www.linkedin.com/in/rezbabaei/" },
+    { label:"ORCID",        value:"0000-0002-2974-0307", href:"https://orcid.org/0000-0002-2974-0307" },
+    { label:"ResearchGate", value:"Reza Babaei", href:"https://www.researchgate.net/profile/Reza-Babaei-13" }
+  ]
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   No editing needed past this line.
+   ═══════════════════════════════════════════════════════════════ */
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* --- header + hero --- */
+$('#railName').textContent = SITE.name;
+$('#railRole').textContent = SITE.role;
+$('#railCreds').innerHTML = SITE.creds.map(c => `<span>${esc(c)}</span>`).join('');
+$('#updated').textContent  = SITE.updated;
+$('#heroLine').innerHTML   = SITE.heroLine;
+$('#heroSub').textContent  = SITE.heroSub;
+$('#footer').textContent   = '© ' + new Date().getFullYear() + ' ' + SITE.name;
+
+$('#heroLinks').innerHTML = SITE.links.map(l =>
+  `<a class="btn${l.solid ? ' btn-solid' : ''}" href="${esc(l.url)}"${
+    l.url.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${esc(l.label)}</a>`
+).join('');
+
+/* --- research areas --- */
+$('#areas').innerHTML = SITE.areas.map(a => `
+  <article class="area">
+    <span class="area-tag">${esc(a.tag)}</span>
+    <h3>${esc(a.title)}</h3>
+    <p>${esc(a.text)}</p>
+  </article>`).join('');
+
+/* --- contact --- */
+$('#contact').innerHTML = SITE.contact.map(c => `
+  <div class="field">
+    <dt>${esc(c.label)}</dt>
+    <dd>${c.href ? `<a href="${esc(c.href)}"${c.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${esc(c.value)}</a>` : esc(c.value)}</dd>
+  </div>`).join('');
+
+/* --- publications --- */
+const pubs = [...SITE.publications].sort((a, b) => b.year - a.year);
+const types = ['All', ...new Set(pubs.map(p => p.type))];
+let active = 'All';
+
+$('#filters').innerHTML = types.map(t =>
+  `<button class="chip${t === active ? ' on' : ''}" data-type="${esc(t)}">${esc(t)}</button>`).join('');
+
+function renderPubs(){
+  $('#pubList').innerHTML = pubs
+    .filter(p => active === 'All' || p.type === active)
+    .map(p => {
+      const authors = esc(p.authors).replace(esc(SITE.me), `<b>${esc(SITE.me)}</b>`);
+      const meta = [
+        p.doi ? `<a href="${esc(p.doi)}" target="_blank" rel="noopener">DOI ↗</a>` : '',
+        p.pdf ? `<a href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF ↗</a>` : ''
+      ].filter(Boolean).join('');
+      return `<article class="pub" id="pub-${pubs.indexOf(p)}">
+        <div class="pub-yr">${p.year}</div>
+        <div>
+          <h3 class="pub-title">${esc(p.title)}</h3>
+          <p class="pub-authors">${authors}</p>
+          <p class="pub-venue">${esc(p.venue)}</p>
+          ${meta ? `<div class="pub-meta">${meta}</div>` : ''}
+        </div>
+      </article>`;
+    }).join('');
+}
+renderPubs();
+
+$('#filters').addEventListener('click', e => {
+  const b = e.target.closest('.chip');
+  if (!b) return;
+  active = b.dataset.type;
+  document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === b));
+  renderPubs();
+});
+
+/* --- signature dot-plot: one dot per paper, stacked by year --- */
+(function plot(){
+  const svg = $('#plot'), tip = $('#tip');
+  const years = [...new Set(pubs.map(p => p.year))].sort((a, b) => a - b);
+  const span = [years[0], years[years.length - 1]];
+  const all = []; for (let y = span[0]; y <= span[1]; y++) all.push(y);
+
+  const W = 700, R = 5.5, GAP = 15, BASE = 118, PADX = 26;
+  const step = all.length > 1 ? (W - PADX * 2) / (all.length - 1) : 0;
+  svg.setAttribute('viewBox', `0 0 ${W} 140`);
+
+  let out = `<line class="axis" x1="0" y1="${BASE}" x2="${W}" y2="${BASE}"/>`;
+  all.forEach((yr, i) => {
+    const x = PADX + i * step;
+    out += `<text class="yr" x="${x}" y="${BASE + 16}" text-anchor="middle">${String(yr).slice(2)}</text>`;
+    pubs.filter(p => p.year === yr).forEach((p, k) => {
+      out += `<circle cx="${x}" cy="${BASE - 12 - k * GAP}" r="${R}"
+        tabindex="0" role="button" data-i="${pubs.indexOf(p)}"
+        aria-label="${esc(p.title)}"><title>${esc(p.title)}</title></circle>`;
+    });
+  });
+  svg.innerHTML = out;
+
+  function show(c){
+    const i = c.dataset.i, p = pubs[i], box = svg.getBoundingClientRect();
+    const d = c.getBoundingClientRect();
+    tip.innerHTML = `<strong>${esc(p.title)}</strong><br>${p.year} · ${esc(p.venue)}`;
+    tip.style.left = (d.left - box.left + d.width / 2) + 'px';
+    tip.style.top  = (d.top  - box.top) + 'px';
+    tip.classList.add('on'); c.classList.add('is-lit');
+  }
+  function hide(c){ tip.classList.remove('on'); c.classList.remove('is-lit'); }
+
+  svg.addEventListener('mouseover', e => e.target.matches('circle') && show(e.target));
+  svg.addEventListener('mouseout',  e => e.target.matches('circle') && hide(e.target));
+  svg.addEventListener('focusin',   e => e.target.matches('circle') && show(e.target));
+  svg.addEventListener('focusout',  e => e.target.matches('circle') && hide(e.target));
+
+  svg.addEventListener('click', e => {
+    const c = e.target.closest('circle'); if (!c) return;
+    active = 'All'; document.querySelectorAll('.chip')
+      .forEach(x => x.classList.toggle('on', x.dataset.type === 'All'));
+    renderPubs();
+    const el = document.getElementById('pub-' + c.dataset.i);
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 1600);
+  });
+})();
+
+/* --- active nav link on scroll --- */
+const links = [...document.querySelectorAll('#nav a')];
+(function(){
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) links.forEach(a =>
+        a.classList.toggle('is-active', a.hash === '#' + en.target.id));
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['work','publications','contact'].forEach(id => io.observe(document.getElementById(id)));
+})();
+</script>
+</body>
+</html>
