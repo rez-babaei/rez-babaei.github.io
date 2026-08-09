@@ -49,6 +49,11 @@ a{color:inherit}
   background:var(--ink);color:#e7edf1;
   padding:2.75rem 1.75rem;display:flex;flex-direction:column;gap:2rem;z-index:20;
 }
+.rail-photo{
+  width:86px;height:86px;border-radius:50%;object-fit:cover;display:block;
+  margin:0 0 1.15rem;background:var(--ink-2);
+  border:1px solid #2c4356;box-shadow:0 0 0 4px rgba(169,129,43,.16);
+}
 .rail-name{
   font-family:var(--display);font-weight:800;font-size:1.5rem;
   line-height:1.1;letter-spacing:-.02em;margin:0;
@@ -191,7 +196,9 @@ footer{
 @media(max-width:900px){
   .rail{position:static;width:auto;flex-direction:row;align-items:center;
         flex-wrap:wrap;gap:1rem;padding:1.5rem var(--pad)}
-  .rail-head{flex:1 1 100%}
+  .rail-head{flex:1 1 100%;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .rail-photo{width:56px;height:56px;margin:0;flex:none}
+  .rail-head > div{flex:1 1 12rem}
   .rail-nav{flex-direction:row;flex-wrap:wrap;gap:.25rem 1.1rem;margin-top:0}
   .rail-nav a span{display:none}
   .rail-creds{margin-top:.55rem}
@@ -210,9 +217,12 @@ footer{
 
 <aside class="rail">
   <div class="rail-head">
+    <img class="rail-photo" id="railPhoto" alt="" width="86" height="86">
+    <div>
     <p class="rail-name" id="railName"></p>
     <p class="rail-role" id="railRole"></p>
     <p class="rail-creds" id="railCreds"></p>
+    </div>
   </div>
   <nav class="rail-nav" id="nav">
     <a href="#work"><span>01</span>Research</a>
@@ -265,6 +275,10 @@ footer{
    ═══════════════════════════════════════════════════════════════ */
 
 const SITE = {
+  /* Photo: your GitHub avatar by default. To use your own file instead,
+     upload it to the repo and change this to e.g. "reza.jpg" */
+  photo:    "https://github.com/rez-babaei.png",
+
   name:     "Reza Babaei",
   role:     "Energy Engineer · Research Scientist",
   creds:    ["P.Eng.", "MASc", "CEM", "CMVP", "LEED GA"],
@@ -385,6 +399,9 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 /* --- header + hero --- */
+const ph = $('#railPhoto');
+if (SITE.photo) { ph.src = SITE.photo; ph.alt = SITE.name; } else { ph.remove(); }
+ph && ph.addEventListener('error', () => ph.remove());
 $('#railName').textContent = SITE.name;
 $('#railRole').textContent = SITE.role;
 $('#railCreds').innerHTML = SITE.creds.map(c => `<span>${esc(c)}</span>`).join('');
