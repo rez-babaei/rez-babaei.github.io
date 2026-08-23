@@ -140,7 +140,8 @@ a{color:inherit}
 }
 
 /* ════ MAIN ════ */
-.main{margin-left:var(--rail);padding:0 var(--pad) 2.5rem;max-width:1480px}
+.main{margin-left:var(--rail);padding:0 var(--pad) 2.5rem;max-width:1180px}
+@media(min-width:1600px){:root{--rail:360px}}
 section{padding:2.4rem 0 .4rem}
 section + section{border-top:1px solid var(--rule)}
 
@@ -157,7 +158,15 @@ h2{
 .lede{max-width:64ch;color:var(--muted);margin:0 0 1.35rem;font-size:1.1rem}
 
 /* ════ HERO ════ */
-.hero{padding-top:clamp(1.8rem,4vh,2.8rem)}
+.hero{padding-top:clamp(1.8rem,4vh,2.8rem);position:relative}
+.hero::before{
+  content:"";position:absolute;top:-1.5rem;right:-1.5rem;
+  width:min(760px,72%);height:340px;z-index:0;pointer-events:none;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1100 620' preserveAspectRatio='xMaxYMin slice'><g fill='none' stroke='%230C6B54' stroke-width='1.4' opacity='0.10'><path d='M60 120 C260 70 440 170 660 110 S980 60 1120 120'/><path d='M40 180 C240 130 460 230 680 170 S1000 120 1140 180'/><path d='M60 240 C260 190 440 290 660 230 S980 180 1120 240'/></g><g fill='none' stroke='%23163238' stroke-width='2' opacity='0.14'><path d='M720 60 L1040 60 L1040 130 L720 130 Z'/><path d='M1040 60 L1075 40 L1075 108 L1040 130'/><path d='M720 60 L755 40 L1075 40'/><path d='M820 130 L820 180 L760 180'/><path d='M920 130 L920 200 L980 200'/></g><g fill='%230C6B54' opacity='0.12'><rect x='700' y='176' width='60' height='9' rx='2'/><rect x='700' y='189' width='60' height='9' rx='2'/><rect x='980' y='196' width='60' height='9' rx='2'/><rect x='980' y='209' width='60' height='9' rx='2'/></g><g fill='none' stroke='%230C6B54' stroke-width='1.6' opacity='0.16'><path d='M712 214 l10 12 l10 -12'/><path d='M732 214 l10 12 l10 -12'/><path d='M992 234 l10 12 l10 -12'/><path d='M1012 234 l10 12 l10 -12'/></g><g fill='none' opacity='0.13'><path d='M640 470 C700 430 760 500 820 455 S940 420 1000 468 1080 500 1120 470' stroke='%23B4762A' stroke-width='2' stroke-dasharray='6 5'/><path d='M640 505 C700 475 760 535 820 500 S940 470 1000 508 1080 532 1120 512' stroke='%230C6B54' stroke-width='2.4'/></g><g opacity='0.14'><line x1='120' y1='430' x2='560' y2='430' stroke='%23163238' stroke-width='1.4'/><circle cx='120' cy='430' r='4' fill='%230C6B54'/><circle cx='260' cy='430' r='4' fill='%230C6B54'/><circle cx='400' cy='430' r='4' fill='%230C6B54'/><circle cx='540' cy='430' r='4' fill='%230C6B54'/><line x1='260' y1='430' x2='260' y2='398' stroke='%23163238' stroke-width='1.2'/><line x1='400' y1='430' x2='400' y2='462' stroke='%23163238' stroke-width='1.2'/></g></svg>") no-repeat top right;background-size:contain;
+  -webkit-mask-image:linear-gradient(255deg,#000 55%,transparent 92%);
+          mask-image:linear-gradient(255deg,#000 55%,transparent 92%);
+}
+.hero > *{position:relative;z-index:1}
 .hero h1{
   font-family:var(--display);font-weight:600;font-stretch:104%;
   font-size:clamp(2rem,4.1vw,3.35rem);line-height:1.1;
@@ -275,9 +284,9 @@ h2{
 .figs-note{font-family:var(--mono);font-size:.66rem;color:var(--muted);margin:.8rem 0 0}
 
 /* ════ EXPERIENCE ════ */
-.role{display:grid;gap:.35rem 2.75rem;padding:1.25rem 0;border-top:1px solid var(--rule)}
+.role{display:grid;gap:.3rem 1.5rem;padding:1.25rem 0;border-top:1px solid var(--rule)}
 .role:first-child{border-top:0;padding-top:.4rem}
-@media(min-width:920px){.role{grid-template-columns:12.5rem 1fr}}
+@media(min-width:900px){.role{grid-template-columns:9.5rem minmax(0,1fr)}}
 .role-when{
   font-family:var(--mono);font-size:.74rem;font-weight:500;color:var(--verified);
   padding-top:.42rem;letter-spacing:.01em;
@@ -297,9 +306,9 @@ h2{
 
 /* ════ HONORS ════ */
 .award{
-  display:grid;gap:.3rem 2rem;padding:1.25rem 0;border-top:1px solid var(--rule);
+  display:grid;gap:.3rem 1.5rem;padding:1.25rem 0;border-top:1px solid var(--rule);
 }
-@media(min-width:720px){.award{grid-template-columns:11rem 1fr}}
+@media(min-width:720px){.award{grid-template-columns:9.5rem minmax(0,1fr)}}
 .award:first-of-type{border-top:0;padding-top:.3rem}
 .award-when{font-family:var(--mono);font-size:.74rem;font-weight:500;color:var(--verified);padding-top:.3rem}
 .award h3{
@@ -344,7 +353,7 @@ h2{
 }
 .chip:hover{border-color:var(--ink);color:var(--ink)}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.pub{display:grid;gap:.22rem 2.75rem;padding:1rem 0;border-top:1px solid var(--rule);scroll-margin-top:2rem;transition:background .3s}
+.pub{display:grid;gap:.22rem 1.5rem;padding:1rem 0;border-top:1px solid var(--rule);scroll-margin-top:2rem;transition:background .3s}
 @media(min-width:780px){.pub{grid-template-columns:5.5rem 1fr}}
 .pub.flash{background:#E4F1EC}
 .pub-yr{font-family:var(--mono);font-size:.82rem;font-weight:500;color:var(--verified);padding-top:.3rem}
@@ -409,7 +418,7 @@ h2{
   padding:.5rem .8rem;cursor:pointer;
 }
 .lb-x:hover{background:var(--verified);color:#fff;border-color:var(--verified)}
-@media(max-width:980px){
+@media(max-width:860px){
   .strip{grid-auto-columns:minmax(74vw,300px);gap:.75rem;padding-bottom:.85rem}
   .plate-shot{height:42vw;max-height:200px;padding:.45rem}
   .plates{margin-top:1.8rem;padding-top:1.3rem}
@@ -440,7 +449,7 @@ h2{
   font-family:var(--mono);font-size:.66rem;color:var(--muted);
   margin:.7rem 0 0;letter-spacing:.03em;
 }
-@media(max-width:980px){.publist-scroll{max-height:460px}}
+@media(max-width:860px){.publist-scroll{max-height:460px}}
 
 /* ════ CONTACT ════ */
 .contact-grid{display:grid;gap:1.3rem 3rem;max-width:1000px}
@@ -457,7 +466,7 @@ footer{
 }
 
 /* ════ MOBILE ════ */
-@media(max-width:980px){
+@media(max-width:860px){
   :root{--pad:1.15rem}
   body{font-size:1.05rem;line-height:1.6}
   .rail{position:static;width:auto;flex-direction:row;align-items:center;flex-wrap:wrap;gap:1rem;padding:1.5rem var(--pad);overflow:visible;background-image:none}
@@ -473,6 +482,7 @@ footer{
   .rail-foot{display:none}
   .main,footer{margin-left:0}
   .hero{padding-top:1.35rem}
+  .hero::before{display:none}
   section{padding-top:1.8rem}
   .hero h1{max-width:none;letter-spacing:-.028em}
   .hero-sub{font-size:1.08rem}
@@ -579,7 +589,7 @@ footer{
 
   <section id="practice">
     <p class="tag">Practice</p>
-    <h2>Where I've worked</h2>
+    <h2>Professional experience</h2>
     <p class="lede" id="practiceLede"></p>
     <div id="roles"></div>
   </section>
