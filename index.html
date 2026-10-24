@@ -424,7 +424,7 @@ body{
 }
 
 /* ════ MAIN ════ */
-.main{margin-left:var(--rail);padding:0 var(--pad) 2.5rem;max-width:1180px}
+.main{margin-left:var(--rail);padding:0 var(--pad) 2.5rem;max-width:1180px;container-type:inline-size;container-name:main}
 @media(min-width:1600px){:root{--rail:360px}}
 section{padding:2.4rem 0 .4rem}
 section + section{border-top:1px solid var(--rule)}
@@ -464,7 +464,7 @@ h2{
   .rail{position:static;width:auto;background:none;color:#000;border-bottom:2px solid #000}
   .rail::before,.rail::after,.hero::before{display:none}
   .rail-name,.rail-role,.rail-creds{color:#000}
-  .rail-nav,.mv-nav,.plates-hint,.pub-scroll-hint{display:none}
+  .rail-nav,.mv-nav,.plates-hint,.pub-scroll-hint,.progress,.to-top,.contact-actions{display:none}
   .main,footer{margin-left:0}
   .publist-scroll{max-height:none;overflow:visible;-webkit-mask-image:none;mask-image:none}
   .strip{overflow:visible;flex-wrap:wrap;display:flex}
@@ -495,8 +495,8 @@ h2{
   display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);
   margin-top:1.6rem;
 }
-@media(min-width:620px){.creds-band{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.creds-band{grid-template-columns:repeat(4,1fr)}}
+@container main (min-width:520px){.creds-band{grid-template-columns:repeat(2,1fr)}}
+@container main (min-width:860px){.creds-band{grid-template-columns:repeat(4,1fr)}}
 .cred{
   background:var(--card);padding:1.2rem 1.2rem 1.1rem;
   display:flex;gap:.85rem;align-items:flex-start;transition:background .2s;
@@ -514,12 +514,12 @@ h2{
   font-size:1.02rem;letter-spacing:-.012em;margin:0;line-height:1.2;
 }
 .cred-b{font-family:var(--mono);font-size:.66rem;color:var(--muted);margin:.35rem 0 0;line-height:1.5}
-.cred-txt{min-width:0;align-self:stretch;display:flex;flex-direction:column}
+.cred-txt{min-width:0;flex:1;align-self:stretch;display:flex;flex-direction:column}
 .cred-id{
   display:flex;flex-direction:column;gap:.15rem;margin:.6rem 0 0;
   font-family:var(--mono);font-size:.63rem;color:var(--muted);letter-spacing:.02em;
 }
-.cred-id span{white-space:nowrap}
+.cred-id span{overflow-wrap:anywhere}
 .cred-id span:first-child{color:var(--ink);font-weight:500}
 .cred-v{
   display:inline-block;margin-top:auto;padding-top:.6rem;align-self:flex-start;font-family:var(--mono);font-size:.63rem;
@@ -579,16 +579,23 @@ h2{
 
 /* ════ FIGURES ════ */
 .figs{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:1rem}
-@media(min-width:640px){.figs{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1080px){.figs{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:1320px){.figs{grid-template-columns:repeat(6,1fr)}}
-.fig{background:var(--card);padding:1.4rem 1.3rem;transition:background .2s}
+@container main (min-width:520px){.figs{grid-template-columns:repeat(2,1fr)}}
+@container main (min-width:760px){.figs{grid-template-columns:repeat(3,1fr)}}
+@container main (min-width:1500px){.figs{grid-template-columns:repeat(6,1fr)}}
+.fig{background:var(--card);padding:1.5rem 1.4rem 1.4rem;transition:background .2s}
 .fig:hover{background:#F4F8F6}
-.fig b{
-  display:block;font-family:var(--display);font-weight:700;font-stretch:104%;
-  font-size:1.75rem;letter-spacing:-.038em;line-height:1.05;color:var(--verified);
+.fig{display:flex;flex-direction:column}
+.fig-v{
+  display:flex;align-items:baseline;white-space:nowrap;
+  font-family:var(--display);font-weight:700;font-stretch:104%;
+  font-size:clamp(1.7rem,2.3vw,2.15rem);letter-spacing:-.035em;line-height:1;color:var(--verified);
 }
-.fig span{display:block;margin-top:.55rem;font-size:.95rem;color:var(--muted);line-height:1.48}
+.fig-s{font-size:.82em;letter-spacing:-.02em}
+.fig-u{
+  margin-left:.34em;font-family:var(--body);font-weight:600;font-size:.46em;letter-spacing:0;
+  color:var(--verified);opacity:.85;transform:translateY(-.08em);
+}
+.fig-l{display:block;margin-top:.7rem;font-size:.94rem;color:var(--muted);line-height:1.5}
 .figs-note{font-family:var(--mono);font-size:.66rem;color:var(--muted);margin:.8rem 0 0}
 
 /* ════ EXPERIENCE ════ */
@@ -620,6 +627,29 @@ h2{
 }
 .copy-btn:hover{border-color:var(--verified);color:var(--verified)}
 
+/* ════ PROGRESS + BACK-TO-TOP ════ */
+.progress{
+  position:fixed;top:0;left:0;height:3px;width:100%;z-index:70;pointer-events:none;
+  background:linear-gradient(90deg,var(--verified),#2FA884);
+  transform-origin:0 50%;transform:scaleX(0);
+}
+.to-top{
+  position:fixed;right:1.25rem;bottom:1.25rem;z-index:55;
+  width:44px;height:44px;border-radius:50%;cursor:pointer;
+  background:var(--ink);color:#fff;border:0;font-size:1.05rem;
+  box-shadow:0 10px 24px -8px rgba(14,36,41,.55);
+  opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:opacity .25s,transform .25s,background .2s;
+}
+.to-top.on{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:var(--verified)}
+
+/* ════ CONTACT ACTIONS ════ */
+.contact-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;margin-top:1.6rem}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink);cursor:pointer}
+.btn-ghost:hover{color:#fff}
+.contact-hint{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+
 /* ════ HONORS ════ */
 .award{
   display:grid;gap:.3rem 1.5rem;padding:1.25rem 0;border-top:1px solid var(--rule);
@@ -636,7 +666,7 @@ h2{
 
 /* ════ CAPABILITIES ════ */
 .cols{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
-@media(min-width:920px){.cols{grid-template-columns:repeat(3,1fr)}}
+@container main (min-width:760px){.cols{grid-template-columns:repeat(3,1fr)}}
 .col{background:var(--card);padding:1.7rem 1.6rem}
 .col h3{
   font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;
@@ -771,6 +801,7 @@ h2{
   .lb-c{font-size:.98rem}
   .lb-x{top:auto;bottom:1rem;right:1rem;box-shadow:0 4px 14px rgba(0,0,0,.35);padding:.7rem 1.05rem}
   .lb-step{top:auto;bottom:1rem;transform:none;width:42px;height:42px}
+  .to-top{right:1rem;bottom:1rem}
   .lb-prev{left:1rem}.lb-next{left:4rem;right:auto}
 }
 
@@ -857,7 +888,7 @@ footer{
   .cred-mark{width:34px;height:34px;font-size:.56rem}
   .cred-t{font-size:.97rem}
   .fig{padding:1.15rem 1.1rem}
-  .fig b{font-size:1.7rem}
+  .fig-v{font-size:1.75rem}
   .fig span{font-size:.96rem}
   .award{padding:1.1rem 0}
   .award-when{padding-top:0;font-size:.72rem}
@@ -879,7 +910,7 @@ footer{
   .rail{position:static;width:auto;background:none;color:#000;border-bottom:2px solid #000}
   .rail::before,.rail::after,.hero::before{display:none}
   .rail-name,.rail-role,.rail-creds{color:#000}
-  .rail-nav,.mv-nav,.plates-hint,.pub-scroll-hint{display:none}
+  .rail-nav,.mv-nav,.plates-hint,.pub-scroll-hint,.progress,.to-top,.contact-actions{display:none}
   .main,footer{margin-left:0}
   .publist-scroll{max-height:none;overflow:visible;-webkit-mask-image:none;mask-image:none}
   .strip{overflow:visible;flex-wrap:wrap;display:flex}
@@ -895,6 +926,8 @@ footer{
 </style>
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
 <aside class="rail">
   <div class="rail-head">
@@ -1003,7 +1036,11 @@ footer{
     <p class="tag">Contact</p>
     <h2>Get in touch</h2>
     <p class="lede" id="contactLede"></p>
-    <dl class="contact-grid" id="contact"></dl>
+    <dl class="contact-grid" id="contactList"></dl>
+    <div class="contact-actions">
+      <button class="btn btn-ghost" id="saveContact">Save contact card <i class="btn-arr" aria-hidden="true">↓</i></button>
+      <span class="contact-hint">Adds my details to your phone or Outlook address book.</span>
+    </div>
   </section>
 
 </main>
@@ -1083,8 +1120,8 @@ const SITE = {
     { value:"100,000 m³",  label:"Annual natural gas savings verified over the same portfolio" },
     { value:"~35%",        label:"Carbon emissions cut per site across a deep-retrofit portfolio" },
     { value:"15+",         label:"Commercial and healthcare facilities taken through full-cycle retrofits" },
-    { value:"&gt;20%",     label:"Internal rate of return on measures identified in ASHRAE Level II audits" },
-    { value:"&lt;5 yrs",   label:"Simple payback on the conservation measures taken to implementation" }
+    { value:">20%",     label:"Internal rate of return on measures identified in ASHRAE Level II audits" },
+    { value:"<5 yrs",   label:"Simple payback on the conservation measures taken to implementation" }
   ],
   figuresNote: "Figures reflect delivered and measured project outcomes, not modelled estimates.",
 
@@ -1244,32 +1281,37 @@ $('#credsBand').innerHTML = (SITE.credentials || []).map(c => `
     </div>
   </div>`).join('');
 
-$('#figs').innerHTML = SITE.figures.map(f =>
-  `<div class="fig"><b data-val="${esc(f.value)}">${esc(f.value)}</b><span>${f.label}</span></div>`).join('');
+$('#figs').innerHTML = SITE.figures.map(f => {
+  const m = String(f.value).match(/^(\D*?)([\d][\d,.]*)(.*)$/);
+  const pre  = m ? m[1] : '', num = m ? m[2] : String(f.value), rest = m ? m[3] : '';
+  const tail = rest.trim();
+  const big  = /^[%+]?$/.test(tail);            // %, + stay full size; real units shrink
+  return `<div class="fig">
+    <b class="fig-v"><span class="fig-n" data-pre="${esc(pre)}" data-num="${esc(num)}">${esc(pre + num)}</span>${
+      tail ? (big ? `<span class="fig-s">${esc(tail)}</span>` : `<span class="fig-u">${esc(tail)}</span>`) : ''}</b>
+    <span class="fig-l">${esc(f.label)}</span>
+  </div>`;
+}).join('');
 
 /* count-up when the figures scroll into view */
 (function(){
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const nums = [...document.querySelectorAll('.fig b')];
   const run = el => {
-    const raw = el.dataset.val;
-    const m = raw.match(/([\d,]+(?:\.\d+)?)/);
-    if (!m) return;
-    const target = parseFloat(m[1].replace(/,/g,''));
-    const pre = raw.slice(0, m.index), post = raw.slice(m.index + m[1].length);
-    const dur = 1100, t0 = performance.now();
+    const pre = el.dataset.pre, raw = el.dataset.num;
+    const target = parseFloat(raw.replace(/,/g, ''));
+    if (!isFinite(target)) return;
+    const final = pre + raw, dur = 1100, t0 = performance.now();
     const fmt = n => Math.round(n).toLocaleString('en-US');
-    function step(t){
+    (function step(t){
       const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-      el.textContent = pre + fmt(target * e) + post;
-      if (k < 1) requestAnimationFrame(step); else el.textContent = raw;
-    }
-    requestAnimationFrame(step);
+      el.textContent = k < 1 ? pre + fmt(target * e) : final;
+      if (k < 1) requestAnimationFrame(step);
+    })(t0);
   };
-  const io = new IntersectionObserver((ent,o)=>{
-    ent.forEach(e=>{ if(e.isIntersecting){ run(e.target); o.unobserve(e.target);} });
-  },{threshold:.6});
-  nums.forEach(n=>io.observe(n));
+  const io = new IntersectionObserver((ent, o) => {
+    ent.forEach(e => { if (e.isIntersecting) { run(e.target); o.unobserve(e.target); } });
+  }, { threshold: .6 });
+  document.querySelectorAll('.fig-n').forEach(n => io.observe(n));
 })();
 $('#figsNote').textContent = SITE.figuresNote;
 
@@ -1303,7 +1345,7 @@ $('#cols').innerHTML = SITE.cols.map(c => `
 
 /* --- contact --- */
 $('#contactLede').textContent = SITE.contactLede;
-$('#contact').innerHTML = SITE.contact.map(c => `
+$('#contactList').innerHTML = SITE.contact.map(c => `
   <div class="field"><dt>${esc(c.label)}</dt>
   <dd>${c.href ? `<a href="${esc(c.href)}"${c.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${esc(c.value)}</a>` : esc(c.value)}${
     c.label === 'Email' ? ` <button class="copy-btn" data-copy="${esc(c.value)}" aria-label="Copy email">copy</button>` : ''}</dd></div>`).join('');
@@ -1597,6 +1639,48 @@ $('#filters').addEventListener('click', e => {
   els.forEach(el => io.observe(el));
   // failsafe: nothing stays invisible longer than 3s
   setTimeout(() => els.forEach(reveal), 3000);
+})();
+
+/* --- reading progress + back to top --- */
+(function(){
+  const bar = $('#progress'), up = $('#toTop');
+  let ticking = false;
+  function update(){
+    const h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? h.scrollTop / max : 0) + ')';
+    up.classList.toggle('on', h.scrollTop > h.clientHeight * 0.9);
+    ticking = false;
+  }
+  addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+  up.addEventListener('click', () => scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+  update();
+})();
+
+/* --- save contact card (vCard) --- */
+(function(){
+  const btn = $('#saveContact'); if (!btn) return;
+  btn.addEventListener('click', () => {
+    const email = (SITE.contact.find(c => c.label === 'Email') || {}).value || '';
+    const li    = (SITE.contact.find(c => c.label === 'LinkedIn') || {}).href || '';
+    const esc   = v => String(v).replace(/([,;\\])/g, '\\$1');
+    const card = [
+      'BEGIN:VCARD', 'VERSION:3.0',
+      'N:Babaei;Reza;;;P.Eng.',
+      'FN:' + esc(SITE.name + ', P.Eng.'),
+      'TITLE:' + esc(SITE.posts.map(p => p.title).join(' / ')),
+      'ORG:' + esc(SITE.posts.map(p => p.org.split(' · ')[0]).join(' / ')),
+      email ? 'EMAIL;TYPE=INTERNET,WORK:' + email : '',
+      'URL:https://rez-babaei.github.io/',
+      li ? 'X-SOCIALPROFILE;TYPE=linkedin:' + li : '',
+      'ADR;TYPE=WORK:;;;Toronto;ON;;Canada',
+      'NOTE:' + esc(SITE.creds.join(', ')),
+      'END:VCARD'
+    ].filter(Boolean).join('\r\n');
+    const url = URL.createObjectURL(new Blob([card], { type: 'text/vcard' }));
+    const a = Object.assign(document.createElement('a'), { href: url, download: 'Reza-Babaei.vcf' });
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+  });
 })();
 
 /* --- active nav on scroll --- */
