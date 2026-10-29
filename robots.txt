@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rez-babaei.github.io/sitemap.xml
