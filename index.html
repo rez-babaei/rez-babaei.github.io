@@ -1313,7 +1313,7 @@ const SITE = {
 
   awards: [
     { when:"Nov 2026", title:"EM Honours 2026", org:"Energy Manager Canada",
-      note:"Named to Energy Manager Canada's EM Honours Class of 2026 for a portfolio-wide summer natural gas study and BAS optimization at BGIS." },
+      note:"Named to Energy Manager Canada's EM Honours Class of 2026 for a portfolio-wide summer natural gas study and BAS optimization at BGIS.", links:[["Energy Manager Canada article","https://www.energy-manager.ca/em-honours-2026-reza-babaei-bgis/"],["BGIS announcement","https://www.linkedin.com/posts/bgis_bgis-energymanagement-energyefficiency-activity-7524472639659069440-bxhC"]] },
     { when:"2026", title:"Top Research Scientist of 2026", org:"University of Windsor · Turbulence & Energy Lab",
       note:"Recognized for the year's leading research contribution within the laboratory." },
     { when:"Sep 2025", title:"Top Research Publisher of 2025", org:"University of Windsor",
@@ -1476,6 +1476,7 @@ $('#honors-list').innerHTML = SITE.awards.map(a => `
       <h3>${esc(a.title)}</h3>
       <p class="award-org">${esc(a.org)}</p>
       ${a.note ? `<p>${esc(a.note)}</p>` : ''}
+      ${a.links ? `<p class="award-links">${a.links.map(l=>`<a href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])} ↗</a>`).join(' · ')}</p>` : ''}
     </div>
   </article>`).join('');
 
