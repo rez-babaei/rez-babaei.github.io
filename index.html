@@ -1060,6 +1060,9 @@ footer{
   .hero-feature{font-size:.82rem;flex-wrap:wrap;border-radius:14px}
 }
 @media print{.hero-feature{display:none}}
+.cred-f{margin:auto 0 0;align-self:flex-start}
+button.cred-v{background:none;border:0;border-bottom:1px solid var(--glow);border-radius:0;padding:.6rem 0 0;margin:0;cursor:pointer;line-height:inherit}
+button.cred-v:hover{border-bottom-color:var(--verified)}
 </style>
 </head>
 <body>
@@ -1233,9 +1236,13 @@ const SITE = {
       issued:"Apr 2025", id:"100572817",
       verify:"https://credentials.peo.on.ca/7b863d39-9e63-4bca-8307-b169b94dadd1" },
     { mark:"CEM",   title:"Certified Energy Manager", body:"Association of Energy Engineers",
-      issued:"Feb 2025", id:"101218" },
+      issued:"Feb 2025", id:"101218", valid:"Jun 2028",
+      lookup:{ action:"https://portal.aeecenter.org/custom/cpdirectory/search_results.cfm",
+               fields:{ submitFlag:"1", contact_last_name:"Babaei", certid:"101218" } } },
     { mark:"CMVP",  title:"Measurement & Verification Professional", body:"Association of Energy Engineers",
-      issued:"Jan 2025", id:"93687" },
+      issued:"Jan 2025", id:"93687", valid:"Jun 2028",
+      lookup:{ action:"https://portal.aeecenter.org/custom/cpdirectory/search_results.cfm",
+               fields:{ submitFlag:"1", contact_last_name:"Babaei", certid:"93687" } } },
     { mark:"LEED",  title:"LEED Green Associate", body:"U.S. Green Building Council",
       issued:"Jan 2024", id:"11543205-GREEN-ASSOCIATE",
       verify:"https://www.usgbc.org/people/reza-babaei/0011543205" }
@@ -1420,8 +1427,10 @@ $('#credsBand').innerHTML = (SITE.credentials || []).map(c => `
       <p class="cred-id">
         <span>ID ${esc(c.id)}</span>
         <span>Issued ${esc(c.issued)}</span>
+        ${c.valid ? `<span>Valid to ${esc(c.valid)}</span>` : ''}
       </p>
-      ${c.verify ? `<a class="cred-v" href="${esc(c.verify)}" target="_blank" rel="noopener">Verify ↗</a>` : ''}
+      ${c.verify ? `<a class="cred-v" href="${esc(c.verify)}" target="_blank" rel="noopener">View public record ↗</a>` : ''}
+      ${c.lookup ? `<form class="cred-f" method="post" action="${esc(c.lookup.action)}" target="_blank">${Object.entries(c.lookup.fields).map(([k,v])=>`<input type="hidden" name="${esc(k)}" value="${esc(v)}">`).join('')}<button type="submit" class="cred-v">View in AEE directory ↗</button></form>` : ''}
     </div>
   </div>`).join('');
 
