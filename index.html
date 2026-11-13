@@ -1073,6 +1073,15 @@ footer{
 .cred-f{margin:auto 0 0;align-self:flex-start}
 button.cred-v{background:none;border:0;border-bottom:1px solid var(--glow);border-radius:0;padding:.6rem 0 0;margin:0;cursor:pointer;line-height:inherit}
 button.cred-v:hover{border-bottom-color:var(--verified)}
+
+/* ════ ONLINE PROFILES ════ */
+.online-list{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.6rem}
+.online-list a{display:flex;flex-direction:column;gap:.2rem;padding:.85rem 1rem;background:var(--card);border:1px solid var(--rule);border-radius:4px;text-decoration:none;color:var(--ink);transition:border-color .18s,transform .18s,box-shadow .18s;height:100%}
+.online-list a:hover{border-color:var(--verified);transform:translateY(-2px);box-shadow:0 12px 26px -18px rgba(12,107,84,.55)}
+.online-list b{font-family:var(--display);font-weight:600;font-size:1rem}
+.online-list span{font-family:var(--mono);font-size:.66rem;color:var(--muted);letter-spacing:.02em}
+@media(max-width:860px){.online-list{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.online-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1099,6 +1108,7 @@ button.cred-v:hover{border-bottom-color:var(--verified)}
     <a href="#capabilities">Capabilities</a>
     <a href="#research">Research</a>
     <a href="#contact">Contact</a>
+    <a href="#online">Online</a>
   </nav>
   <p class="rail-foot" id="railFoot"></p>
 </aside>
@@ -1195,6 +1205,22 @@ button.cred-v:hover{border-bottom-color:var(--verified)}
     </div>
   </section>
 
+  <section id="online" class="online" aria-label="Reza Babaei online">
+    <p class="tag">Online</p>
+    <h2>Find Reza Babaei online</h2>
+    <p class="lede">Profiles, publications and recognition for Reza Babaei, P.Eng. — Energy Engineer, TELUS @ BGIS and Research Scientist at the University of Windsor.</p>
+    <ul class="online-list">
+      <li><a href="about.html"><b>About</b><span>Profile &amp; biography</span></a></li>
+      <li><a href="publications.html"><b>Publications</b><span>All papers with journal DOIs</span></a></li>
+      <li><a rel="me noopener" href="https://www.linkedin.com/in/rezbabaei/" target="_blank"><b>LinkedIn</b><span>linkedin.com/in/rezbabaei</span></a></li>
+      <li><a rel="me noopener" href="https://scholar.google.com/citations?user=Z_5roncAAAAJ&amp;hl=en" target="_blank"><b>Google Scholar</b><span>Citations &amp; h-index</span></a></li>
+      <li><a rel="me noopener" href="https://www.researchgate.net/profile/Reza-Babaei-13" target="_blank"><b>ResearchGate</b><span>Research profile</span></a></li>
+      <li><a rel="me noopener" href="https://orcid.org/0000-0002-2974-0307" target="_blank"><b>ORCID</b><span>0000-0002-2974-0307</span></a></li>
+      <li><a rel="me noopener" href="https://www.usgbc.org/people/reza-babaei/0011543205" target="_blank"><b>USGBC</b><span>LEED Green Associate</span></a></li>
+      <li><a rel="noopener" href="https://www.energy-manager.ca/em-honours-2026-reza-babaei-bgis/" target="_blank"><b>Energy Manager Canada</b><span>EM Honours 2026 feature</span></a></li>
+    </ul>
+  </section>
+
 </main>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Figure detail">
@@ -1212,7 +1238,6 @@ button.cred-v:hover{border-bottom-color:var(--verified)}
   </div>
 </div>
 
-<nav class="profiles" aria-label="Reza Babaei profiles" style="max-width:1100px;margin:24px auto 0;padding:0 24px;font-size:14px;line-height:1.8">More about me: <a href="about.html">About Reza Babaei</a> · <a href="publications.html">Publications</a> · On the web: <a rel="me" href="https://www.linkedin.com/in/rezbabaei/">LinkedIn</a> · <a rel="me" href="https://scholar.google.com/citations?user=Z_5roncAAAAJ&amp;hl=en">Google Scholar</a> · <a rel="me" href="https://www.researchgate.net/profile/Reza-Babaei-13">ResearchGate</a> · <a rel="me" href="https://orcid.org/0000-0002-2974-0307">ORCID</a></nav>
 <footer id="footer"></footer>
 
 <script>
@@ -1393,7 +1418,8 @@ const SITE = {
     { label:"Based in", value:"Greater Toronto Area, Ontario, Canada" },
     { label:"LinkedIn", value:"linkedin.com/in/rezbabaei", href:"https://www.linkedin.com/in/rezbabaei/" },
     { label:"Scholar",  value:"Publications and citations", href:"https://scholar.google.com/citations?user=Z_5roncAAAAJ&hl=en" },
-    { label:"ORCID",    value:"0000-0002-2974-0307", href:"https://orcid.org/0000-0002-2974-0307" }
+    { label:"ORCID",    value:"0000-0002-2974-0307", href:"https://orcid.org/0000-0002-2974-0307" },
+    { label:"ResearchGate", value:"Research profile", href:"https://www.researchgate.net/profile/Reza-Babaei-13" }
   ]
 };
 
