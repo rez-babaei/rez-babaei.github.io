@@ -1082,6 +1082,21 @@ button.cred-v:hover{border-bottom-color:var(--verified)}
 .online-list span{font-family:var(--mono);font-size:.66rem;color:var(--muted);letter-spacing:.02em}
 @media(max-width:860px){.online-list{grid-template-columns:1fr 1fr}}
 @media(max-width:420px){.online-list{grid-template-columns:1fr}}
+
+/* ════ TYPE: Inter title / muted-subtitle style (matches rail roles) ════ */
+:root{--display:"Inter",system-ui,-apple-system,sans-serif}
+h1,h2,h3,.rail-name,.cred-t,.role h3,.lb-t,.fig-n,.award-t{font-stretch:normal}
+.rail-name{font-weight:700;letter-spacing:-.025em}
+h2{font-weight:700;letter-spacing:-.022em}
+.cred-t,.role h3,.lb-t,.online-list b{font-weight:600;letter-spacing:-.012em}
+.role-where,.award-org,.cred-id,.online-list span,.plate-s,.lb-s,.plates-hint,
+.figs-note,.contact-hint,.pub-scroll-hint,.mv-foot,.cred-b{
+  font-family:var(--body);font-size:.86rem;letter-spacing:-.003em;color:var(--muted);font-weight:400;
+}
+.pub-meta a{font-family:var(--body);font-size:.84rem;letter-spacing:0}
+.rail-nav a{font-family:var(--body);font-size:.9rem;font-weight:500;letter-spacing:-.003em}
+.btn,.chip,.cred-v{font-family:var(--body);letter-spacing:-.003em;font-weight:500}
+.btn{font-size:.86rem}.chip{font-size:.84rem}.cred-v{font-size:.8rem}
 </style>
 </head>
 <body>
