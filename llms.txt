@@ -1,0 +1,59 @@
+# Reza Babaei
+
+> Reza Babaei, P.Eng., CEM, CMVP, LEED Green Associate — Energy Engineer, TELUS @ BGIS, and Research Scientist at the University of Windsor (Turbulence & Energy Laboratory). Based in Toronto, Ontario, Canada. Works on building decarbonization, HVAC optimization, telecommunications and data centre energy efficiency, and measurement and verification.
+
+## Key facts
+
+- Name: Reza Babaei
+- Current title: Energy Engineer, TELUS @ BGIS (BGIS, on the TELUS portfolio)
+- Research role: Research Scientist, University of Windsor, Turbulence & Energy Laboratory
+- Location: Toronto, Ontario, Canada
+- Credentials: Professional Engineer (P.Eng., Professional Engineers Ontario); Certified Energy Manager (CEM) and Certified Measurement and Verification Professional (CMVP), Association of Energy Engineers; LEED Green Associate, U.S. Green Building Council
+- Education: University of Windsor; University of Mazandaran
+- Awards: EM Honours 2026 (Energy Manager Canada); T&E Lab Techno-Economist 2026 (University of Windsor); T&E Lab Furious Scribbler 2026 (University of Windsor); Top Research Publisher of 2025 (University of Windsor)
+- Topics: decarbonization, net-zero buildings, HVAC optimization, telecom and data centre energy efficiency, building automation systems, electrification, energy retrofits, measurement and verification, renewable energy systems, green hydrogen, energy modelling
+
+## Pages
+
+- [Home](https://rez-babaei.github.io/): profile, experience, credentials, awards, publications and contact
+- [About](https://rez-babaei.github.io/about.html): biography of Reza Babaei
+- [Publications](https://rez-babaei.github.io/publications.html): peer-reviewed publications with DOIs
+
+## Profiles
+
+- [LinkedIn](https://www.linkedin.com/in/rezbabaei/)
+- [Google Scholar](https://scholar.google.com/citations?user=Z_5roncAAAAJ&hl=en)
+- [ResearchGate](https://www.researchgate.net/profile/Reza-Babaei-13)
+- [ORCID 0000-0002-2974-0307](https://orcid.org/0000-0002-2974-0307)
+- [USGBC](https://www.usgbc.org/people/reza-babaei/0011543205)
+- [GitHub](https://github.com/rez-babaei)
+
+## Publications
+
+- [Fuel transition pathways: assessing hydrogen blending in Canadian household natural gas supplies](https://doi.org/10.1016/j.fuel.2026.140617) (2027)
+- [Integrating energy modeling and decision-making for development of sustainable off-grid education via renewable systems](https://doi.org/10.1016/j.jobe.2026.117572) (2026)
+- [Verified energy efficiency and renewable microgrid planning for remote educational infrastructure: a Pelee Island case study](https://doi.org/10.1016/j.energy.2026.142242) (2026)
+- [Photovoltaic tracking technologies for sustainable electrification: a techno-economic analysis on Western Pelee Island, Canada](https://doi.org/10.1177/0958305X251315398) (2026)
+- [Energy and emission implications of battery-electric container ships operating from Los Angeles Harbor](https://doi.org/10.1007/978-3-032-13357-1_6) (2026)
+- [Decarbonizing maritime logistics through hydrogen-powered container ships](https://doi.org/10.1016/j.ref.2026.100823) (2026)
+- [Sustainable electrification and water desalination with distributed renewable energy sources](https://doi.org/10.1016/j.fraope.2025.100481) (2026)
+- [Assessing the feasibility of electrifying container ships for sustainable maritime transport](https://doi.org/10.1016/j.nexres.2025.101249) (2026)
+- [Hydrogen pathways for green fertilizer production: a comparative techno-economic study of electrolysis and plasmalysis](https://doi.org/10.1016/j.ijhydene.2025.151571) (2025)
+- [Feasibility and optimization of hybrid energy systems for sustainable electricity, heat, and fresh water production in a rural community](https://doi.org/10.1080/15435075.2024.2448292) (2025)
+- [Comparative analysis of energy dispatch strategies in PV-integrated renewable energy systems](https://doi.org/10.1016/j.nxener.2025.100290) (2025)
+- [A comprehensive study of optimizing renewable energy–water–heat integration for isolated islands in the Persian Gulf](https://doi.org/10.1016/j.energy.2024.133973) (2024)
+- [Electrifying maritime shipping: evaluating the CO₂ reduction and viability of future battery-powered container ships calling at the Port of Los Angeles](https://doi.org/10.1088/1742-6596/2929/1/012007) (2024)
+- [Sustainable energy solutions for rural electrification in a low-income community](https://doi.org/10.1049/PBPO251E_ch6) (2024)
+- [Feasibility analysis of sustainable hydrogen production for heavy-duty applications: case study of Highway 401](https://doi.org/10.1016/j.energy.2023.128785) (2023)
+- [Technoeconomic analysis and optimization of hybrid solar–wind–hydrodiesel renewable energy systems using two dispatch strategies](https://doi.org/10.1155/2023/3101876) (2023)
+- [Feasibility analysis of solar tracking technologies connected to renewable energy systems](https://doi.org/10.1007/978-3-031-47237-4_7) (2023)
+- [Techno-economic analysis of solar tracker-based hybrid energy systems in a rural residential building: a case study in South Africa](https://doi.org/10.1080/15435075.2021.2024545) (2023)
+- [Feasibility evaluation of stand-alone energy solutions in energy-poor islands using sustainable hydrogen production](https://doi.org/10.1002/er.8704) (2022)
+- [Feasibility and optimal sizing analysis of stand-alone hybrid energy systems coupled with various battery technologies: a case study of Pelee Island](https://doi.org/10.1016/j.egyr.2022.03.133) (2022)
+- [Optimization of hydrogen-producing sustainable island microgrids](https://doi.org/10.1016/j.ijhydene.2022.02.187) (2022)
+- [Optimal sizing and feasibility analysis of grid-isolated renewable hybrid microgrids: effects of energy management controllers](https://doi.org/10.1016/j.energy.2021.122503) (2022)
+- [Energy, exergy, environmental (3E) and parametric assessment of a triple-pressure reheat combined-cycle power plant](https://doi.org/10.1115/1.4049738) (2021)
+- [Energy–exergy performance assessment with optimization guidance for the components of the 396-MW combined-cycle power plant](https://doi.org/10.1002/ese3.764) (2020)
+- [Study of intensification of the heat transfer in helically coiled tube heat exchangers via coiled wire inserts](https://doi.org/10.1016/j.ijthermalsci.2019.03.029) (2019)
+- [Small modular reactor integration for sustainable greenhouse energy: a case study of Sun Parlour Complex](https://doi.org/10.2139/ssrn.6993641) (2026)
+- [A comprehensive approach to renewable microgrid planning: energy modeling, optimization, and verified efficiency measures](https://doi.org/10.2139/ssrn.6579316) (2026)
